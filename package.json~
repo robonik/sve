@@ -2,7 +2,6 @@
   "name": "sve",
   "version": "0.0.1",
   "description": "Smart Virtual Env",
-  "main": "server.js",
   "directories": {
     "test": "test"
   },
