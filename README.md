@@ -1,0 +1,4 @@
+sve
+===
+
+Smart virtual env
