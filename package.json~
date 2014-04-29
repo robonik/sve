@@ -1,0 +1,30 @@
+{
+  "name": "sve",
+  "version": "0.0.1",
+  "description": "Smart Virtual Env",
+  "main": "custom.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+
+"dependencies": {
+      "connect": "~2.14.5",
+      "socket.io": "~0.9.16"
+	
+},
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/robonik/sve.git"
+  },
+  "author": "nikhilm359@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robonik/sve/issues"
+  },
+  "homepage": "https://github.com/robonik/sve"
+}
