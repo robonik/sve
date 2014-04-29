@@ -1,0 +1,3 @@
+var str = "rfid:yahoo";
+var res = str.split(":");
+var name = res[1];

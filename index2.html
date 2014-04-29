@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+	<head>
+			<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>Preview</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.0/css/toastr.css">
+		<link rel="stylesheet" type="text/css" href="css/custom.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+		<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.0/js/toastr.js" ></script>
+		
+		
+	</head>
+	<body>
+	
+	
+	
+	<div id="page1"   data-url="welcome" data-role="page"  data-theme="c">	
+<!--
+<div id="landing"  >
+                    <h1 style="text-align:center;">DigiControl</h1>
+                </div>
+<h2  class="custom-fonts1" >Welcome to Smart Home Automation System</h2>
+-->
+
+
+
+<div style="text-align:center; height:50%; width:50%;"> 
+<br />
+<br /><br />
+<br />
+
+ <div style="text-align:center; position:relative;
+    top: 50%;
+    left: 50%;
+      " ><img align="middle" src="../images/cyicon_200.png">
+
+                             </div>
+
+
+<br>
+<br>
+<br>
+<div style=" text-align:center; position: relative; top: 50%;left: 50%;">
+<br />
+<br /><br />
+<input type="text" name="name" id="uname"  placeholder='Your Name'  data-theme="c"   required data-clear-btn="true" data-mini="true">
+<a   id="navi" href=""   data-mini="false" style="text-align:center;" data-role="button" align="middle"  data-theme="c" >LogIn</a>
+
+</div>
+
+
+</div>
+</div>
+
+			<div id="home" data-url="preview" data-role="page"  >
+				
+				
+				<div id="content"  data-url="content" data-role="content"  >
+					<div id="landing" >
+					<h2 style="text-align:center"><img align="middle" src="../images/cyicon_200.png"></h2>
+				                                              </div>
+					<h2 id="display"  class="custom-fonts1" style="position: relative;" >  Welcome ! </h2> 
+					<br>
+					<br>
+			
+					<br>
+					<br>
+					<div  style="text-align:center; border-radius: 10px ;   "    >
+					<img id="net_img" align="middle" src="../images/connected.png">
+
+                             </div>
+			<ul data-theme="c"  data-role="listview" data-inset="true" >
+
+						 
+						<li id="robo_mode"><a   href="#usermode"   data-transition="fade"  data-rel ="popup" class="glass" ><img src="../images/control.png" style="padding-left:20px; padding-top:20px;" /> <h2>User Mode</h2> 
+						  <p>Control Your Devices Remotely  </p></a></li>
+						 
+						 
+					<li><a id="statpage"  href="#netset" data-transition="fade" data-rel="popup"  > <img src="../images/menu-card2.png" style="padding-left:20px; padding-top:20px;"  /><h2><span id="rmswitch" >  Robo Mode Is Not Active</span> </h2> <p> Register device for remote and  local control </p></a></li>				 
+						 
+						 		 
+						
+						<!-- 
+						<li><a href= data-transition="slide"> <img style="padding-left:20px; padding-top:20px;"  src="../images/settings.png"/> <h2>Settings</h2><p>Manage Your  App</p> </a></li>
+					-->
+
+						 
+			</ul>
+
+		
+	
+					</div>	
+					
+		<!--Network Setting Popup -->	
+		
+		
+			
+					<div data-role="popup" id="netset"  style="min-width:400px;"class="ui-corner-all" >
+					
+					
+	<div style="text-align:center; position:relative;"   ><form class="userform">
+			            <h2 style="text-decoration:none;" class="custom-fonts1" >Network Settings</h2>
+			           <br />
+			            <input type="text" name="name" id="robo_ip"  placeholder='System-Ip address:'  required data-clear-btn="true" data-mini="true">
+			            <br />
+			            <input type="email" name="email" id="robo_port" placeholder='System-Port:'  required data-clear-btn="true" data-mini="true">
+			            <div class="ui-grid-a"><br><br>
+			                <div class="ui-block-a"><a  href="#"  data-rel="close" data-role="button" data-theme="c" data-mini="true">Cancel</a></div>
+			                <div class="ui-block-b"  ><a href="#" id="save12" data-rel="close" data-role="button" data-theme="c" data-mini="true">Save</a></div>
+			            </div>
+			        </form></div>
+			        <br>
+			        <br>
+			        <br>
+
+			        <a href="#" id="connect" data-theme="c" data-role="button" >
+					       <span  id="con_switch">Connect</span>
+					        </a>
+</div>	
+<!--Video feed -->
+<div data-role="popup" id="usermode"  style="min-width:300px; max-height:800px ; "class="ui-corner-all" >
+					
+		<div data-role="header" data-theme="c">
+			<img src="../images/cyicon_32.png">
+		</div>			
+	<div style="text-align:center; position:relative;"   ></div>
+			        <p>This  is  a demo version of  System  to show the  global connectivity </p>
+						<br />
+						<div id="livefeed"  style=" text-align:center; border-style:solid ; border-width:10px; border-radius: 2px;  height:600px ; width:400px"  ><br><img src="Robot_con.png"></div>
+		
+						
+			 
+					      <p style="text-align:center;" ><span><b>Use Arrow keys for control</b> </span>
+					        </p>
+</div>	
+
+
+					</div>	<!--end of page home -->
+
+
+
+
+<script src="gen1.js"></script>
+
+
+<!-- This is public action lib  . Uncomment  if you are using   the  public networks -->
+<!-- <script src="public.js" ></script> -->
+	</body>
+
+
+
+</html>
