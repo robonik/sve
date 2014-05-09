@@ -248,7 +248,7 @@ counter = counter +1 ;
 
 
 }
-else if (code =="tmp") {
+else if (code =="temp") {
 
 var data = res[1];
 
@@ -708,60 +708,6 @@ else{
 function connect_robo(){
       
 		if(!ROBO_CONNECT){
-
-
-
-
-/*========================================New node communications==========================================================*/
-robo = io.connect('http://' + main_address.robo_ip + ':' +main_address.robo_port );
- 
-            robo.on('connect', function () {
-
-
-              tostr('success',"System Is Now  Connected !");
-              notify('Connected to the local System ');
-               $("#con_switch").empty();
-                $("#con_switch").append("Disconnect");
-              ROBO_STATUS = true;   
-             ROBO_CONNECT = true;
-             iosocket.send('global_connect');
-             robo_mode_func() ;
-        
-    //    tostr('success', 'Welcome To SVE') ;
-     //   iosocket.send('test') ;
- 
-                robo.on('message', function(msg) {
-                  
-                     //  msg = e.data ;
-
-                    //  alert(msg) ;
-                      //tostr('info', 'New Response from SVE') ;
-                        iosocket.send(msg);
-                        response(msg);
-
-                      //iosocket.send(msg);
-
-                        });
-
-                         robo.on('disconnect', function() {
-                         notify('Disconnected to the local System ');
-                         iosocket.send('global_disconnect');
-                         // $('#incomingChatMessages').append('<li>Disconnected</li>');
-                        // tostr('danger' ,"You are now  disconneted from server ");
-                   
-                   
-                });
-
-                });
-
-
-             
-           
-                
-            }
-
-
-/*====================================Old way communications================================================================*
      robo = new WebSocket( 'ws://' + main_address.robo_ip + ':' +main_address.robo_port + '/echo' );
        robo.onopen=function (){
 
@@ -794,14 +740,14 @@ robo = io.connect('http://' + main_address.robo_ip + ':' +main_address.robo_port
  
   	disconnect();
   
-  * 
+  /* 
    ROBO_CONNECT=false;
  //  robo_con_control();
    ROBO_STATUS = false; 
   status_log('Robo is Disconnected');
   $("#con_switch").empty();
   $("#con_switch").append("Connect");
-   *
+   */
 
    };
 
@@ -822,9 +768,9 @@ robo.onmessage = function (e) {
 };
 
 }
-/*======================================================================*/
+
  else {
- 	tostr('success',"You are Already Connected !","Network Settings");
+ 	toastr.info("You are Already Connected !","Network Settings");
  
    // $("#warning").empty();
     // $("#warning").append("You are  already connected");
